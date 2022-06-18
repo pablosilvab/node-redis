@@ -1,13 +1,13 @@
 # Using Redis 
 
 This project use Redis for caching data from an Age of Empires II API.
-
-## Requirements 
+ 
+## Requirements 
 
 * Node
 * Redis and Redis Commander (I use Docker)
 
-## Installation
+## Installation
 
 Clone the project and run Redis with Docker Compose.
 ```
