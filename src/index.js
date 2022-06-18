@@ -18,6 +18,11 @@ client.on("error", (error) => console.error(error))
 const app = express()
 app.use(responseTime())
 
+
+app.get('/', async (req, res) => {
+    return res.json({message:'Hello world!'})
+})
+
 app.get('/civilizations', async (req, res) => {
     try {
         client.get('civilizations', async (err, reply) => {
