@@ -4,11 +4,12 @@ const responseTime = require('response-time')
 const redis = require('ioredis');
 
 const PORT = process.env.PORT || 3000
+const REDIS_HOST = process.env.REDIS_HOST || '127.0.0.1'
 const REDIS_PORT = process.env.REDIS_PORT || 6379
 
 const client = redis.createClient({
-    host: '127.0.0.1',
-    port: 6379
+    host: REDIS_HOST,
+    port: REDIS_PORT
 })
 
 client.on('connect', () => console.log(`Redis is connected on port ${REDIS_PORT}`))
