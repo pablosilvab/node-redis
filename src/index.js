@@ -21,9 +21,32 @@ app.get('/civilizations', async (req, res) => {
     try {
         client.get('civilizations', async (err, reply) => {
             if (reply) return res.json(JSON.parse(reply));
-            
+
             const response = await axios.get('https://age-of-empires-2-api.herokuapp.com/api/v1/civilizations')
             await client.set('civilizations', JSON.stringify(response.data), (err, reply) => {
+                if (err) {
+                    console.log('error')
+                }
+            });
+            return res.json(response.data)
+
+        });
+    } catch (err) {
+        return res.status(500).json({ message: 'Error! Try again later' })
+    }
+})
+
+
+app.get('/civilizations/:id', async (req, res) => {
+    try {
+        const id = req.params.id
+        client.get(req.params.id, async (err, reply) => {
+            if (reply) return res.json(JSON.parse(reply));
+
+            const response = await axios.get(
+                'https://age-of-empires-2-api.herokuapp.com/api/v1/civilization/' + req.params.id
+            )
+            await client.set(req.params.id, JSON.stringify(response.data), (err, reply) => {
                 if (err) {
                     console.log('error')
                 }
