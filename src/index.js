@@ -6,13 +6,16 @@ const redis = require('ioredis');
 const PORT = process.env.PORT || 3000
 const REDIS_HOST = process.env.REDIS_HOST || '127.0.0.1'
 const REDIS_PORT = process.env.REDIS_PORT || 6379
+const REDIS_PASS = process.env.REDIS_PASS || ''
 
 const client = redis.createClient({
     host: REDIS_HOST,
-    port: REDIS_PORT
+    port: REDIS_PORT,
+    no_ready_check: true,
+    password: 'pM6H4pUuEo4VilW00mpkwNmwwwc1g64I'
 })
 
-client.on('connect', () => console.log(`Redis is connected on port ${REDIS_PORT}`))
+client.on('connect', () => console.log(`Redis is connected on ${REDIS_HOST}:${REDIS_PORT}`))
 client.on("error", (error) => console.error(error))
 
 const app = express()
