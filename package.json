@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pablosilvab/redis.git"
+    "url": "git+https://github.com/pablosilvab/node-redis.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/pablosilvab/redis/issues"
+    "url": "https://github.com/pablosilvab/node-redis/issues"
   },
-  "homepage": "https://github.com/pablosilvab/redis#readme",
+  "homepage": "https://github.com/pablosilvab/node-redis#readme",
   "dependencies": {
     "axios": "^0.27.2",
     "express": "^4.18.1",
