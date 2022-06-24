@@ -12,7 +12,7 @@ const client = redis.createClient({
     host: REDIS_HOST,
     port: REDIS_PORT,
     no_ready_check: true,
-    password: 'pM6H4pUuEo4VilW00mpkwNmwwwc1g64I'
+    password: REDIS_PASS
 })
 
 client.on('connect', () => console.log(`Redis is connected on ${REDIS_HOST}:${REDIS_PORT}`))

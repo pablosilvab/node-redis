@@ -11,7 +11,7 @@ This project use Redis for caching data from an Age of Empires II API.
 
 Clone the project and run Redis with Docker Compose.
 ```
-docker compose -d 
+docker compose up -d 
 ```
 
 Then, install dependencies
